@@ -1,0 +1,62 @@
+{
+    "name": "firesphere/solr-manager",
+    "description": "Manage Solr cores from the Silverstripe CMS",
+    "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "silverstripe",
+        "search",
+        "solr",
+        "configuration"
+    ],
+    "authors": [
+        {
+            "name": "Simon `Firesphere` Erkelens",
+            "email": "simonerkelens@silverstripe.com",
+            "homepage": "https://casa-laguna.net",
+            "role": "Lead developer"
+        },
+        {
+            "name": "Marco `Sheepy` Hermo",
+            "email": "marco@silverstripe.com",
+            "role": "Lead developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "silverstripe/framework": "^4",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "scriptfusion/phpunit-immediate-exception-printer": "^1",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev",
+            "1.0": "1.0.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Firesphere\\SolrManager\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Firesphere\\SolrManager\\Tests\\": "tests"
+        }
+    },
+    "support": {
+        "email": "solr@casa-laguna.net",
+        "issues": "https://github.com/firesphere/silverstripe-solr-manager/issues",
+        "source": "https://github.com/firesphere/silverstripe-solr-manager"
+    },
+    "suggest": {
+        "firesphere/solr-search": "Modern Solr search implementation"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
