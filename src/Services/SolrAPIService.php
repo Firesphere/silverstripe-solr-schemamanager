@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Firesphere\SolrManager\Services;
 
 
@@ -14,21 +13,14 @@ class SolrAPIService
         'fields',
     ];
 
-    public function getSchema($index) {
-        return $this->get('schema', $index);
-    }
-
-    public function getFields($index) {
-        return $this->get('fields', $index);
-    }
-
-    protected function get($method, $index) {
-
+    public function get($method, $index)
+    {
         $client = new Client([
-            'base_uri' => 'http://127.0.0.1/solr'
+            'base_uri' => 'http://127.0.0.1:8983',
         ]);
-        $target = sprintf('%s/schema/%s', $index, $method);
-        $result = $client->get($target);
-        return $result->getBody();
+        $target = sprintf('solr/%s/schema/%s', $index, $method);
+        $result = $client->request('GET', $target);
+
+        return json_decode($result->getBody());
     }
 }
